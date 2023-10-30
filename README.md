@@ -31,12 +31,14 @@ PG_PASSWORD="postgres" = database password\
 PG_DB_NAME="postgres" = database name\
 PG_PORT="postgres" = database port
 
-## Build
+## Run with script
 ```bash
-Build By Run Script
-  ./build_script.sh
-  
-Build By Command
+  ./run_script.sh
+
+```
+
+## Run with command
+```bash
   docker-compose up -d --build
 ```
     
