@@ -1,0 +1,9 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+  <p><strong>Name:</strong> {{ product.name }}</p>
+  <p><strong>Description:</strong> {{ product.description }}</p>
+  <p><strong>Price:</strong> {{ product.price | thaiBahtCurrency }}</p>
+</div>
+<button type="button" class="custom-button btn btn-primary" [routerLink]="['/products']">Back to List</button>
+

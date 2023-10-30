@@ -1,0 +1,36 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories (remove the ones you don't need)
+/vendor/
+/Godeps/
+/_vendor/
+/vendor_json/
+
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Output for coverage profiles
+*.prof
+
+# Compiled Go files
+*.test
+*.prof
+
+# Cache and Temporary files
+.cache/
+/tmp/
+
+.env

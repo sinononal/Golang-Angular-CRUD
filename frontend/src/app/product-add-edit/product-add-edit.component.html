@@ -1,0 +1,27 @@
+<h2>{{ isEditing ? 'Edit Product' : 'Add Product' }}</h2>
+
+<form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+  <div class="form-group">
+    <label for="name">Name*:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="product.name"  formControlName="Name" class="form-control">
+    <div *ngIf="productForm.get('Name')?.hasError('required') && productForm.get('Name')?.touched" class="text-danger">
+      Name is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" [(ngModel)]="product.description" formControlName="Description" class="form-control"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="price">Price*:</label>
+    <input type="number" id="price" name="price" [(ngModel)]="product.price" formControlName="Price" class="form-control">
+    <div *ngIf="productForm.get('Price')?.hasError('required') && productForm.get('Price')?.touched" class="text-danger">
+      Price is required.
+    </div>
+    <div *ngIf="productForm.get('Price')?.hasError('min') && productForm.get('Price')?.touched" class="text-danger">
+      Price must be >= 0.
+    </div>
+  </div>
+  <button type="submit" class="custom-button btn btn-primary">Save</button>
+  <button type="button" class="custom-button btn btn-secondary" [routerLink]="['/products']">Cancel</button>
+</form>

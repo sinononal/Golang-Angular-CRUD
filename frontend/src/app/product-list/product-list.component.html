@@ -1,0 +1,39 @@
+<h2>Product List</h2>
+<button [routerLink]="['/products/add']" class="custom-button green-button">Add Product</button>
+
+<ngx-datatable
+  class="material"
+  [rows]="products"
+  [columnMode]="'force'"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="50"
+  [limit]="100"
+>
+
+  <ngx-datatable-column name="Name">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.name }}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Description">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.description }}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Price">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.price | thaiBahtCurrency }}
+    </ng-template>
+  </ngx-datatable-column>
+
+  <ngx-datatable-column name="Actions">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      <button [routerLink]="['/products', row.ID]" class="custom-button btn-info">View</button>
+      <button [routerLink]="['/products/edit', row.ID]" class="custom-button btn-primary">Edit</button>
+      <button (click)="deleteProduct(row.ID)" class="custom-button btn-danger">Delete</button>
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>

@@ -1,0 +1,2 @@
+# Ignore PostgreSQL data directory (assuming it's in the project directory)
+/pg_data/
